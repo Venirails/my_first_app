@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyFirstApp</title>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+        <div id="container">
+      <h1>
+        <a href="#">Twin triangles</a>
+      </h1>
+      <ul id="skip-nav">
+        <li>
+          <a href="#search">Search</a>
+        </li>
+        <li>
+          <a href="#content">Jump to content</a>
+        </li>
+      </ul>
+      <div id="navigation">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Products</a>
+          </li>
+          <li>
+            <a href="#">Testimonials</a>
+          </li>
+          <li>
+            <% if session[:admin] %>
+            <a href="/admin/logout">Admin Logout</a>
+            <% else %>
+            <a href="/admin/login">Admin Login</a>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div id="content">
+        
+        
+      </div>
+   
+    <%= yield %>
+ 
+      
+      <div id="footer">
+
+        <p>
+         @Myapp &copy;  all rights reserved.
+        </p>
+        
+      </div>
+    </div>
+
+  </body>
+</html>
