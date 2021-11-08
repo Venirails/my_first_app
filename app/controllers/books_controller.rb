@@ -59,20 +59,20 @@ class BooksController < ApplicationController
   end
 
   def update_log
-    logger.info "====alas..a  book has been deleted====="
+    logger.info "====Alas....  book has been deleted====="
   end
 
   private
 
 def admin_logged_in?
    if session[:admin].nil?
-     flash[:notice] = "You should login as an admin to continue..."
+     flash[:notice] = "You should login as an admin to continue"
      redirect_to :controller=>"admin",:action=>"login"
   end
 end
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id]) #DRY
+      @book = Book.find(params[:id]) 
     end
 
     # Only allow a list of trusted parameters through.
